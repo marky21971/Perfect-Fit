@@ -1,5 +1,5 @@
 // Perfect Fit translation worker
-export default {
+
 export default {
   fetch: async (request, env) => {
     const url = new URL(request.url);
