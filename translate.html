@@ -167,9 +167,10 @@ async function translateText() {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                text: text,
-                targetLanguage: languageNames[language]
+           body: JSON.stringify({
+    text: text,
+    targetLang: language.toUpperCase()
+})
             })
         });
 
