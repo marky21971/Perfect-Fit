@@ -4,6 +4,20 @@ export default {
   fetch: async (request, env) => {
     const url = new URL(request.url);
 
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    };
+
+    // Allow the browser to check permission before sending the request
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        status: 204,
+        headers: corsHeaders
+      });
+    }
+
     if (url.pathname === "/api/translate" && request.method === "POST") {
       try {
         const body = await request.json();
@@ -19,7 +33,8 @@ export default {
             {
               status: 400,
               headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                ...corsHeaders
               }
             }
           );
@@ -51,7 +66,8 @@ export default {
             {
               status: response.status,
               headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                ...corsHeaders
               }
             }
           );
@@ -62,8 +78,10 @@ export default {
             translation: data.translations?.[0]?.text || ""
           }),
           {
+            status: 200,
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              ...corsHeaders
             }
           }
         );
@@ -71,12 +89,14 @@ export default {
       } catch (error) {
         return new Response(
           JSON.stringify({
-            error: "Translation error"
+            error: "Translation error",
+            details: error.message
           }),
           {
             status: 500,
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              ...corsHeaders
             }
           }
         );
