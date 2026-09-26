@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,6 +88,34 @@
         font-size: 14px;
         color: #777;
     }
+
+    .back-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #c2185b;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+    .book-section {
+        margin-top: 30px;
+    }
+
+    .book-section h2 {
+        color: #c2185b;
+    }
+
+    iframe {
+        width: 100%;
+        height: 700px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
 </style>
 </head>
 
@@ -105,23 +132,28 @@
     <label for="language">Choose a language</label>
 
     <select id="language">
-        <option value="es">Spanish</option>
-        <option value="fr">French</option>
-        <option value="de">German</option>
-        <option value="it">Italian</option>
-        <option value="pt">Portuguese</option>
-        <option value="sw">Swahili</option>
-        <option value="yo">Yoruba</option>
-        <option value="ig">Igbo</option>
-        <option value="ha">Hausa</option>
-        <option value="tl">Filipino</option>
+        <option value="ES">Spanish</option>
+        <option value="FR">French</option>
+        <option value="DE">German</option>
+        <option value="IT">Italian</option>
+        <option value="PT">Portuguese</option>
+        <option value="SW">Swahili</option>
+        <option value="YO">Yoruba</option>
+        <option value="IG">Igbo</option>
+        <option value="HA">Hausa</option>
+        <option value="TL">Filipino</option>
     </select>
 
     <label for="text">Enter text to translate</label>
 
-    <textarea id="text" placeholder="Type or paste your text here..."></textarea>
+    <textarea
+        id="text"
+        placeholder="Type or paste your text here..."
+    ></textarea>
 
-    <button onclick="translateText()">Translate</button>
+    <button type="button" id="translateButton">
+        Translate
+    </button>
 
     <div id="result">
         Your translation will appear here.
@@ -129,59 +161,82 @@
 
     <div class="status" id="status"></div>
 
+    <a class="back-link" href="index.html">
+        Back to Perfect Fit
+    </a>
+
+    <div class="book-section">
+
+        <h2>Perfect Fit</h2>
+
+        <iframe
+            src="perfect-fit.pdf"
+            title="Perfect Fit Book">
+        </iframe>
+
+    </div>
+
 </div>
 
 <script>
+document.getElementById("translateButton").addEventListener("click", translateText);
+
 async function translateText() {
 
     const text = document.getElementById("text").value.trim();
     const language = document.getElementById("language").value;
     const result = document.getElementById("result");
     const status = document.getElementById("status");
+    const button = document.getElementById("translateButton");
 
     if (!text) {
         result.textContent = "Please enter some text to translate.";
+        status.textContent = "";
         return;
     }
 
     result.textContent = "Translating...";
-    status.textContent = "";
-
-    const languageNames = {
-        es: "Spanish",
-        fr: "French",
-        de: "German",
-        it: "Italian",
-        pt: "Portuguese",
-        sw: "Swahili",
-        yo: "Yoruba",
-        ig: "Igbo",
-        ha: "Hausa",
-        tl: "Filipino"
-    };
+    status.textContent = "Connecting to translation service...";
+    button.disabled = true;
+    button.textContent = "Translating...";
 
     try {
 
-       const response = await fetch("https://perfect-fit.imaleo234.workers.dev/api/translate", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-           body: JSON.stringify({
-    text: text,
-    targetLang: language.toUpperCase()
-})
-            })
-        });
+        const response = await fetch(
+            "https://perfect-fit.imaleo234.workers.dev/api/translate",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    text: text,
+                    targetLang: language
+                })
+            }
+        );
 
-        if (!response.ok) {
-            throw new Error("Translation service returned an error.");
+        let data;
+
+        try {
+            data = await response.json();
+        } catch {
+            throw new Error(
+                "The translation server returned an invalid response."
+            );
         }
 
-        const data = await response.json();
+        if (!response.ok) {
+            throw new Error(
+                data.error ||
+                "Translation service returned an error."
+            );
+        }
 
         if (!data.translation) {
-            throw new Error("No translation was returned.");
+            throw new Error(
+                "No translation was returned."
+            );
         }
 
         result.textContent = data.translation;
@@ -189,23 +244,23 @@ async function translateText() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error("Translation error:", error);
 
         result.textContent =
-            "The translation could not be completed. Please try again.";
+            "Translation failed: " + error.message;
 
-        status.textContent = "Translation error.";
+        status.textContent =
+            "Please try again.";
+
+    } finally {
+
+        button.disabled = false;
+        button.textContent = "Translate";
     }
 }
 </script>
-<div style="margin-top:30px;">
-  <h2>Perfect Fit</h2>
-  <iframe
-    src="perfect-fit.pdf"
-    width="100%"
-    height="700"
-    style="border:1px solid #ccc; border-radius:10px;">
-  </iframe>
-</div>
+
 </body>
 </html>
+
+
