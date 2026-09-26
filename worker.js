@@ -1,4 +1,4 @@
-export default {
+e// Perfect Fit translation workerxport default {
   fetch: async (request, env) => {
     const url = new URL(request.url);
 
