@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Perfect Fit by M. A. Harrington</title>
+  <title>M. A. Harrington — Stories</title>
 
   <style>
     body {
@@ -17,14 +17,21 @@
     }
 
     h1 {
-      font-size: 2.7em;
-      margin: 0 0 5px;
+      font-size: 2.8em;
+      margin: 0;
     }
 
-    h2 {
-      font-weight: normal;
+    .author {
       color: #f2a65a;
-      margin-top: 0;
+      font-size: 1.3em;
+      margin: 8px 0 45px;
+    }
+
+    .story {
+      max-width: 900px;
+      margin: 0 auto 70px;
+      padding-bottom: 55px;
+      border-bottom: 1px solid rgba(242, 166, 90, 0.2);
     }
 
     .cover {
@@ -32,92 +39,88 @@
       max-width: 90%;
       border-radius: 8px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      margin: 25px 0;
+      margin: 10px 0 25px;
+    }
+
+    .story-title {
+      font-size: 2.2em;
+      margin-bottom: 5px;
+    }
+
+    .story-author {
+      color: #f2a65a;
+      font-size: 1.1em;
+      margin-bottom: 20px;
     }
 
     .description {
       max-width: 650px;
       margin: 0 auto 30px;
       line-height: 1.7;
-      font-size: 1.1em;
+      font-size: 1.08em;
     }
 
     .button-row {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
     .button {
       display: inline-block;
-      padding: 15px 30px;
+      padding: 14px 28px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.05em;
+      font-size: 1em;
       transition: 0.2s ease;
     }
 
-    .read-button {
-      background-color: transparent;
-      color: #f2a65a;
-      border: 2px solid #f2a65a;
-    }
-
-    .read-button:hover {
-      background-color: rgba(242, 166, 90, 0.15);
-    }
-
-    .translate-button {
-      background-color: #f2a65a;
-      color: #1a1a2e;
-    }
-
-    .translate-button:hover {
-      background-color: #ffbb70;
-    }
-
+    .preview-button,
+    .translate-button,
     .buy-button {
       background-color: #f2a65a;
       color: #1a1a2e;
     }
 
+    .preview-button:hover,
+    .translate-button:hover,
     .buy-button:hover {
       background-color: #ffbb70;
     }
 
-    .translation-note {
-      max-width: 600px;
-      margin: 22px auto 0;
-      font-size: 1em;
-      line-height: 1.5;
-      color: #d8d8d8;
-    }
-
-    .library {
-      max-width: 1000px;
-      margin: 70px auto 0;
-    }
-
-    .library h3 {
-      font-size: 1.8em;
+    .download-button {
+      background-color: transparent;
       color: #f2a65a;
-      margin-bottom: 10px;
+      border: 2px solid #f2a65a;
     }
 
-    .library-intro {
+    .download-button:hover {
+      background-color: rgba(242, 166, 90, 0.15);
+    }
+
+    .coming-soon {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .coming-soon h2 {
+      color: #f2a65a;
+      font-size: 2em;
+    }
+
+    .coming-soon p {
       color: #d8d8d8;
-      margin-bottom: 35px;
+      line-height: 1.6;
+      font-size: 1.05em;
     }
 
-    .story-space {
-      min-height: 120px;
-      border: 1px solid rgba(242, 166, 90, 0.18);
-      border-radius: 14px;
+    .future-story {
+      min-height: 80px;
       margin: 18px 0;
+      border: 1px solid rgba(242, 166, 90, 0.12);
+      border-radius: 14px;
       background-color: rgba(255, 255, 255, 0.02);
     }
 
@@ -133,81 +136,93 @@
 
 <body>
 
-  <h1>Perfect Fit</h1>
+  <h1>Stories</h1>
 
-  <h2>by M. A. Harrington</h2>
-
-  <img
-    src="cover.jpg"
-    alt="Perfect Fit book cover"
-    class="cover"
-  >
-
-  <p class="description">
-    Cynthia, a therapist, meets Sam, a park ranger, at a speed dating event.
-    They build a life together and welcome a daughter, Lucy — but when Lucy
-    is diagnosed with CDKL5, everything changes. This is a story about love,
-    loss, and fighting for the world to see a child, not just a diagnosis.
-  </p>
-
-  <div class="button-row">
-
-    <a
-      href="perfect-fit.pdf"
-      target="_blank"
-      class="button read-button"
-    >
-      📖 Read the Book
-    </a>
-
-    <a
-      href="perfect-fit.pdf"
-      download
-      class="button read-button"
-    >
-      📥 Download the Book
-    </a>
-
-    <a
-      href="https://translate.google.com/"
-      target="_blank"
-      class="button translate-button"
-    >
-      🌍 Translate My Book
-    </a>
-
-    <a
-      href="https://www.paypal.me/bautistaroselyn271"
-      target="_blank"
-      class="button buy-button"
-    >
-      💛 Buy Now — $2.99
-    </a>
-
+  <div class="author">
+    by M. A. Harrington
   </div>
 
-  <p class="translation-note">
-    Enjoy Perfect Fit in the language that's right for you. 🌍
-  </p>
 
+  <!-- PERFECT FIT -->
 
-  <section class="library">
+  <section class="story">
 
-    <h3>More Stories Coming Soon</h3>
+    <img
+      src="cover.jpg"
+      alt="Perfect Fit book cover"
+      class="cover"
+    >
 
-    <p class="library-intro">
-      A growing collection of stories, books, and adventures by
-      M. A. Harrington.
+    <h2 class="story-title">
+      Perfect Fit
+    </h2>
+
+    <div class="story-author">
+      by M. A. Harrington
+    </div>
+
+    <p class="description">
+      Cynthia, a therapist, meets Sam, a park ranger, at a speed dating event.
+      They build a life together and welcome a daughter, Lucy — but when Lucy
+      is diagnosed with CDKL5, everything changes. This is a story about love,
+      loss, and fighting for the world to see a child, not just a diagnosis.
     </p>
 
-    <div class="story-space"></div>
-    <div class="story-space"></div>
-    <div class="story-space"></div>
-    <div class="story-space"></div>
-    <div class="story-space"></div>
-    <div class="story-space"></div>
-    <div class="story-space"></div>
-    <div class="story-space"></div>
+    <div class="button-row">
+
+      <a
+        href="preview.html"
+        class="button preview-button"
+      >
+        📖 Read a Preview
+      </a>
+
+      <a
+        href="perfect-fit.pdf"
+        download
+        class="button download-button"
+      >
+        📥 Download
+      </a>
+
+      <a
+        href="https://translate.google.com/"
+        target="_blank"
+        class="button translate-button"
+      >
+        🌍 Translate
+      </a>
+
+      <a
+        href="https://www.paypal.me/bautistaroselyn271"
+        target="_blank"
+        class="button buy-button"
+      >
+        💛 Buy — $2.99
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FUTURE STORIES -->
+
+  <section class="coming-soon">
+
+    <h2>More Stories Coming Soon</h2>
+
+    <p>
+      A growing collection of stories, books, adventures, and movies
+      by M. A. Harrington.
+    </p>
+
+    <div class="future-story"></div>
+    <div class="future-story"></div>
+    <div class="future-story"></div>
+    <div class="future-story"></div>
+    <div class="future-story"></div>
+    <div class="future-story"></div>
 
   </section>
 
