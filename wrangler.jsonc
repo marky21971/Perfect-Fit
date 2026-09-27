@@ -3,12 +3,19 @@
   "name": "perfect-fit",
   "main": "worker.js",
   "compatibility_date": "2026-09-25",
+
+  "secrets": {
+    "required": [
+      "DEEPL_API_KEY"
+    ]
+  },
+
   "observability": {
     "enabled": true
   },
+
   "assets": {
     "directory": ".",
     "binding": "ASSETS"
   }
 }
-
