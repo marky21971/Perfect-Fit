@@ -1,120 +1,167 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfect Fit — Translation</title>
+
+<title>Perfect Fit — Translation Assistant</title>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     body {
-        font-family: Arial, sans-serif;
-        background: #fff7fb;
         margin: 0;
-        padding: 20px;
-        color: #333;
+        padding: 0;
+        background: #1a1a2e;
+        color: #f8f1df;
+        font-family: Georgia, serif;
+        text-align: center;
     }
 
     .container {
-        max-width: 700px;
+        width: 92%;
+        max-width: 1000px;
         margin: 0 auto;
-        background: white;
-        padding: 25px;
-        border-radius: 16px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        padding: 25px 0 50px;
     }
 
     h1 {
-        text-align: center;
-        color: #c2185b;
-        margin-bottom: 10px;
+        color: #f2a65a;
+        font-size: 42px;
+        margin: 10px 0 5px;
     }
 
-    .intro {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #666;
+    h2 {
+        font-size: 26px;
+        margin: 5px 0 25px;
+    }
+
+    /* HOME BUTTON */
+    .home-button {
+        display: inline-block;
+        background: #f2a65a;
+        color: #1a1a2e;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 16px 30px;
+        border-radius: 12px;
+        margin: 10px 0 30px;
+        border: none;
+    }
+
+    .home-button:hover {
+        opacity: 0.9;
+    }
+
+    .translator-box {
+        background: #252542;
+        padding: 25px;
+        border-radius: 18px;
+        margin-bottom: 35px;
     }
 
     label {
         display: block;
-        font-weight: bold;
-        margin-bottom: 8px;
+        font-size: 21px;
+        margin-bottom: 10px;
     }
 
-    textarea,
-    select {
+    select,
+    textarea {
         width: 100%;
-        box-sizing: border-box;
-        padding: 12px;
-        border: 1px solid #ddd;
+        padding: 16px;
+        font-family: Georgia, serif;
+        font-size: 18px;
         border-radius: 10px;
-        font-size: 16px;
-        margin-bottom: 18px;
+        border: 2px solid #f2a65a;
+        background: #fffaf0;
+        color: #1a1a2e;
+        margin-bottom: 20px;
     }
 
     textarea {
-        min-height: 180px;
+        min-height: 150px;
         resize: vertical;
     }
 
-    button {
+    /* LARGE TRANSLATE BUTTON */
+    #translateButton {
         width: 100%;
-        padding: 14px;
-        border: none;
-        border-radius: 10px;
-        background: #c2185b;
-        color: white;
-        font-size: 17px;
+        padding: 22px;
+        font-family: Georgia, serif;
+        font-size: 26px;
         font-weight: bold;
+        background: #f2a65a;
+        color: #1a1a2e;
+        border: none;
+        border-radius: 14px;
         cursor: pointer;
+        margin-top: 5px;
     }
 
-    button:hover {
+    #translateButton:hover {
         opacity: 0.9;
+    }
+
+    #translateButton:disabled {
+        opacity: 0.6;
+        cursor: wait;
     }
 
     #result {
         margin-top: 25px;
-        padding: 15px;
-        background: #fff0f6;
-        border-radius: 10px;
+        padding: 20px;
+        background: #fffaf0;
+        color: #1a1a2e;
+        border-radius: 12px;
         min-height: 80px;
+        text-align: left;
+        font-size: 19px;
+        line-height: 1.6;
         white-space: pre-wrap;
     }
 
-    .status {
-        text-align: center;
-        margin-top: 12px;
-        font-size: 14px;
-        color: #777;
-    }
-
-    .back-link {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-        color: #c2185b;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .back-link:hover {
-        text-decoration: underline;
-    }
-
-    .book-section {
-        margin-top: 30px;
-    }
-
-    .book-section h2 {
-        color: #c2185b;
+    .book-title {
+        color: #f2a65a;
+        font-size: 25px;
+        margin: 30px 0 15px;
     }
 
     iframe {
         width: 100%;
         height: 700px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
+        border: none;
+        border-radius: 12px;
+        background: white;
+    }
+
+    .note {
+        font-size: 16px;
+        opacity: 0.85;
+        margin-top: 15px;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 34px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        .home-button {
+            width: 100%;
+            font-size: 20px;
+        }
+
+        #translateButton {
+            font-size: 24px;
+        }
     }
 </style>
 </head>
@@ -123,82 +170,82 @@
 
 <div class="container">
 
-    <h1>Perfect Fit</h1>
-
-    <p class="intro">
-        Translation Assistant
-    </p>
-
-    <label for="language">Choose a language</label>
-
-    <select id="language">
-        <option value="ES">Spanish</option>
-        <option value="FR">French</option>
-        <option value="DE">German</option>
-        <option value="IT">Italian</option>
-        <option value="PT">Portuguese</option>
-        <option value="SW">Swahili</option>
-        <option value="YO">Yoruba</option>
-        <option value="IG">Igbo</option>
-        <option value="HA">Hausa</option>
-        <option value="TL">Filipino</option>
-    </select>
-
-    <label for="text">Enter text to translate</label>
-
-    <textarea
-        id="text"
-        placeholder="Type or paste your text here..."
-    ></textarea>
-
-    <button type="button" id="translateButton">
-        Translate
-    </button>
-
-    <div id="result">
-        Your translation will appear here.
-    </div>
-
-    <div class="status" id="status"></div>
-
-    <a class="back-link" href="index.html">
-        Back to Perfect Fit
+    <!-- EASY WAY HOME -->
+    <a href="index.html" class="home-button">
+        ← Back to Home
     </a>
 
-    <div class="book-section">
+    <h1>Perfect Fit</h1>
 
-        <h2>Perfect Fit</h2>
+    <h2>Translation Assistant</h2>
 
-        <iframe
-            src="perfect-fit.pdf"
-            title="Perfect Fit Book">
-        </iframe>
+    <div class="translator-box">
+
+        <label for="language">
+            Choose your language
+        </label>
+
+        <select id="language">
+            <option value="ES">Spanish</option>
+            <option value="FR">French</option>
+            <option value="DE">German</option>
+            <option value="IT">Italian</option>
+            <option value="PT">Portuguese</option>
+        </select>
+
+        <label for="text">
+            Enter text to translate
+        </label>
+
+        <textarea
+            id="text"
+            placeholder="Type or paste the text you would like translated here..."
+        ></textarea>
+
+        <button id="translateButton">
+            🌍 TRANSLATE
+        </button>
+
+        <div id="result">
+            Your translation will appear here.
+        </div>
+
+        <div class="note">
+            More languages can be added as we expand the translation system.
+        </div>
 
     </div>
+
+    <div class="book-title">
+        Read Perfect Fit
+    </div>
+
+    <iframe
+        src="perfect-fit.pdf"
+        title="Perfect Fit Book">
+    </iframe>
 
 </div>
 
 <script>
-document.getElementById("translateButton").addEventListener("click", translateText);
+const translateButton = document.getElementById("translateButton");
+const textBox = document.getElementById("text");
+const languageBox = document.getElementById("language");
+const resultBox = document.getElementById("result");
 
-async function translateText() {
+translateButton.addEventListener("click", async function () {
 
-    const text = document.getElementById("text").value.trim();
-    const language = document.getElementById("language").value;
-    const result = document.getElementById("result");
-    const status = document.getElementById("status");
-    const button = document.getElementById("translateButton");
+    const text = textBox.value.trim();
+    const language = languageBox.value;
 
     if (!text) {
-        result.textContent = "Please enter some text to translate.";
-        status.textContent = "";
+        resultBox.textContent = "Please enter some text to translate.";
         return;
     }
 
-    result.textContent = "Translating...";
-    status.textContent = "Connecting to translation service...";
-    button.disabled = true;
-    button.textContent = "Translating...";
+    translateButton.disabled = true;
+    translateButton.textContent = "Translating...";
+    resultBox.textContent = "Please wait...";
 
     try {
 
@@ -216,51 +263,34 @@ async function translateText() {
             }
         );
 
-        let data;
-
-        try {
-            data = await response.json();
-        } catch {
-            throw new Error(
-                "The translation server returned an invalid response."
-            );
-        }
+        const data = await response.json();
 
         if (!response.ok) {
             throw new Error(
-                data.error ||
-                "Translation service returned an error."
+                data.error || "Translation failed."
             );
         }
 
-        if (!data.translation) {
-            throw new Error(
-                "No translation was returned."
-            );
-        }
-
-        result.textContent = data.translation;
-        status.textContent = "Translation complete.";
+        resultBox.textContent =
+            data.translation || "No translation was returned.";
 
     } catch (error) {
 
-        console.error("Translation error:", error);
-
-        result.textContent =
+        resultBox.textContent =
             "Translation failed: " + error.message;
-
-        status.textContent =
-            "Please try again.";
 
     } finally {
 
-        button.disabled = false;
-        button.textContent = "Translate";
+        translateButton.disabled = false;
+        translateButton.textContent = "🌍 TRANSLATE";
     }
-}
+});
 </script>
 
 </body>
 </html>
+```
+
+
 
 
