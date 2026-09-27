@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Perfect Fit by M. A. Harrington</title>
 
   <style>
@@ -12,15 +13,12 @@
       color: #f5f5f5;
       margin: 0;
       padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 5px;
+      font-size: 2.7em;
+      margin: 0 0 5px;
     }
 
     h2 {
@@ -31,16 +29,17 @@
 
     .cover {
       width: 280px;
+      max-width: 90%;
       border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       margin: 25px 0;
     }
 
     .description {
-      max-width: 600px;
-      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
       font-size: 1.1em;
-      margin-bottom: 30px;
     }
 
     .button-row {
@@ -48,27 +47,18 @@
       gap: 16px;
       flex-wrap: wrap;
       justify-content: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .buy-button,
-    .read-button,
-    .translate-button {
-      padding: 14px 32px;
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
-      transition: background-color 0.2s ease;
-      display: inline-block;
-    }
-
-    .buy-button {
-      background-color: #f2a65a;
-      color: #1a1a2e;
-    }
-
-    .buy-button:hover {
-      background-color: #ffbb70;
+      font-size: 1.05em;
+      transition: 0.2s ease;
     }
 
     .read-button {
@@ -84,21 +74,59 @@
     .translate-button {
       background-color: #f2a65a;
       color: #1a1a2e;
-      margin-top: 20px;
-      font-size: 1.2em;
-      padding: 16px 36px;
     }
 
     .translate-button:hover {
       background-color: #ffbb70;
     }
 
+    .buy-button {
+      background-color: #f2a65a;
+      color: #1a1a2e;
+    }
+
+    .buy-button:hover {
+      background-color: #ffbb70;
+    }
+
     .translation-note {
       max-width: 600px;
-      margin-top: 12px;
-      font-size: 0.95em;
+      margin: 22px auto 0;
+      font-size: 1em;
       line-height: 1.5;
       color: #d8d8d8;
+    }
+
+    .library {
+      max-width: 1000px;
+      margin: 70px auto 0;
+    }
+
+    .library h3 {
+      font-size: 1.8em;
+      color: #f2a65a;
+      margin-bottom: 10px;
+    }
+
+    .library-intro {
+      color: #d8d8d8;
+      margin-bottom: 35px;
+    }
+
+    .story-space {
+      min-height: 120px;
+      border: 1px solid rgba(242, 166, 90, 0.18);
+      border-radius: 14px;
+      margin: 18px 0;
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    footer {
+      margin-top: 70px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #aaa;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -106,6 +134,7 @@
 <body>
 
   <h1>Perfect Fit</h1>
+
   <h2>by M. A. Harrington</h2>
 
   <img
@@ -126,7 +155,7 @@
     <a
       href="perfect-fit.pdf"
       target="_blank"
-      class="read-button"
+      class="button read-button"
     >
       📖 Read the Book
     </a>
@@ -134,7 +163,7 @@
     <a
       href="perfect-fit.pdf"
       download
-      class="read-button"
+      class="button read-button"
     >
       📥 Download the Book
     </a>
@@ -142,7 +171,7 @@
     <a
       href="https://translate.google.com/"
       target="_blank"
-      class="translate-button"
+      class="button translate-button"
     >
       🌍 Translate My Book
     </a>
@@ -150,18 +179,42 @@
     <a
       href="https://www.paypal.me/bautistaroselyn271"
       target="_blank"
-      class="buy-button"
+      class="button buy-button"
     >
-      Buy Now — $2.99
+      💛 Buy Now — $2.99
     </a>
 
   </div>
 
   <p class="translation-note">
-    Download the book first, then use Google Translate to translate the PDF
-    into your chosen language.
+    Enjoy Perfect Fit in the language that's right for you. 🌍
   </p>
+
+
+  <section class="library">
+
+    <h3>More Stories Coming Soon</h3>
+
+    <p class="library-intro">
+      A growing collection of stories, books, and adventures by
+      M. A. Harrington.
+    </p>
+
+    <div class="story-space"></div>
+    <div class="story-space"></div>
+    <div class="story-space"></div>
+    <div class="story-space"></div>
+    <div class="story-space"></div>
+    <div class="story-space"></div>
+    <div class="story-space"></div>
+    <div class="story-space"></div>
+
+  </section>
+
+
+  <footer>
+    © M. A. Harrington
+  </footer>
 
 </body>
 </html>
-
