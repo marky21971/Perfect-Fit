@@ -6,7 +6,7 @@
 
   <title>Perfect Fit — M. A. Harrington</title>
 
-  <!-- PAYPAL -->
+  <!-- PAYPAL PART 1 -->
   <script
     src="https://www.paypal.com/sdk/js?client-id=BAA87q5bQ3u3W_VdJyDEAGF3T-xe-154SXPwWnCRt73RuDEda5aDoizarbE_1BItoxEAXIvD3oyLXe9cUU&components=hosted-buttons&disable-funding=venmo&currency=USD">
   </script>
@@ -34,7 +34,7 @@
     .author {
       color: #f2a65a;
       font-size: 1.3em;
-      margin: 8px 0 40px;
+      margin: 8px 0 45px;
     }
 
     .cover {
@@ -66,60 +66,56 @@
     .actions {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 20px;
+      align-items: center;
       max-width: 500px;
       margin: 0 auto;
     }
 
-    .action-button {
+    .preview-button {
       display: block;
+      width: 100%;
+      box-sizing: border-box;
       padding: 18px 25px;
       border-radius: 35px;
       text-decoration: none;
       font-weight: bold;
       font-size: 1.15em;
+      background-color: #f2a65a;
+      color: #1a1a2e;
       transition: 0.2s ease;
-      border: none;
     }
 
-    .action-button:hover {
+    .preview-button:hover {
+      background-color: #ffbb70;
       transform: translateY(-2px);
     }
 
-    .preview-button,
-    .translate-button {
-      background-color: #f2a65a;
-      color: #1a1a2e;
-    }
-
-    .preview-button:hover,
-    .translate-button:hover {
-      background-color: #ffbb70;
-    }
-
     .buy-section {
-      margin-top: 5px;
+      width: 100%;
+      box-sizing: border-box;
       padding: 25px 20px;
-      background-color: rgba(255, 255, 255, 0.05);
       border-radius: 18px;
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
     .buy-title {
-      font-size: 1.3em;
       color: #f2a65a;
+      font-size: 1.35em;
+      font-weight: bold;
       margin-bottom: 5px;
     }
 
-    .buy-price {
-      font-size: 1.1em;
-      margin-bottom: 18px;
+    .price {
+      font-size: 1.15em;
+      margin-bottom: 20px;
     }
 
     .paypal-box {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 55px;
+      min-height: 60px;
     }
 
     .coming-soon {
@@ -158,10 +154,6 @@
       .story-title {
         font-size: 2em;
       }
-
-      .action-button {
-        font-size: 1.05em;
-      }
     }
   </style>
 </head>
@@ -175,9 +167,6 @@
     <div class="author">
       by M. A. Harrington
     </div>
-
-
-    <!-- PERFECT FIT -->
 
     <img
       src="cover.jpg"
@@ -200,32 +189,19 @@
       loss, and fighting for the world to see a child, not just a diagnosis.
     </p>
 
-
-    <!-- THREE MAIN ACTIONS -->
-
     <div class="actions">
 
       <!-- PREVIEW -->
 
       <a
         href="preview.html"
-        class="action-button preview-button"
+        class="preview-button"
       >
         📖 Read a Preview
       </a>
 
 
-      <!-- TRANSLATION -->
-
-      <a
-        href="translate.html"
-        class="action-button translate-button"
-      >
-        🌍 Translate My Book
-      </a>
-
-
-      <!-- BUY -->
+      <!-- COMPLETE BOOK -->
 
       <div class="buy-section">
 
@@ -233,13 +209,15 @@
           💛 Buy the Complete Book
         </div>
 
-        <div class="buy-price">
+        <div class="price">
           $2.99 USD
         </div>
 
+        <!-- PAYPAL PART 2 -->
+
         <div class="paypal-box">
 
-          <div id="paypal-container-5CE23LZUYDP2W"></div>
+          <div id="paypal-container-T9ZBQZKFX6Z62"></div>
 
         </div>
 
@@ -248,23 +226,21 @@
     </div>
 
 
-    <!-- PAYPAL BUTTON -->
+    <!-- PAYPAL PART 2 SCRIPT -->
 
     <script>
       paypal.HostedButtons({
-        hostedButtonId: "5CE23LZUYDP2W",
-      }).render("#paypal-container-5CE23LZUYDP2W");
+        hostedButtonId: "T9ZBQZKFX6Z62",
+      }).render("#paypal-container-T9ZBQZKFX6Z62");
     </script>
 
-
-    <!-- FUTURE STORIES -->
 
     <section class="coming-soon">
 
       <h2>More Stories Coming Soon</h2>
 
       <p>
-        A growing collection of stories, books, adventures, and movies
+        A growing collection of books, stories, adventures, and movies
         by M. A. Harrington.
       </p>
 
