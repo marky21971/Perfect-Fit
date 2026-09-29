@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,159 +8,142 @@
   <title>Perfect Fit — M. A. Harrington</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Georgia, serif;
-      background-color: #1a1a2e;
-      color: #f5f5f5;
       margin: 0;
-      padding: 40px 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #1a1a2e;
+      color: #f5f5f5;
       text-align: center;
     }
 
     .container {
+      width: 100%;
       max-width: 900px;
       margin: 0 auto;
+      padding: 55px 20px 40px;
     }
 
-    h1 {
-      font-size: 2.8em;
+    header h1 {
       margin: 0;
+      font-size: 3rem;
+      font-weight: normal;
+      letter-spacing: 1px;
     }
 
-    .author {
+    .site-author {
+      margin: 10px 0 45px;
       color: #f2a65a;
-      font-size: 1.3em;
-      margin: 8px 0 45px;
+      font-size: 1.25rem;
     }
 
     .cover {
+      display: block;
       width: 280px;
       max-width: 90%;
+      height: auto;
+      margin: 0 auto 30px;
       border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      margin-bottom: 25px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
-    .story-title {
-      font-size: 2.4em;
-      margin: 5px 0;
+    .book-title {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: normal;
     }
 
-    .story-author {
+    .book-author {
+      margin: 8px 0 28px;
       color: #f2a65a;
-      font-size: 1.1em;
-      margin-bottom: 25px;
+      font-size: 1.15rem;
     }
 
     .description {
       max-width: 680px;
-      margin: 0 auto 35px;
-      line-height: 1.7;
-      font-size: 1.08em;
+      margin: 0 auto 38px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: #e5e5e5;
     }
 
-    .actions {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      max-width: 500px;
+    .buttons {
+      max-width: 480px;
       margin: 0 auto;
     }
 
     .button {
       display: block;
       width: 100%;
-      box-sizing: border-box;
-      padding: 18px 25px;
-      border-radius: 35px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.15em;
-      background-color: #f2a65a;
+      padding: 16px 24px;
+      margin: 0 0 16px;
+      border-radius: 10px;
+      background: #f2a65a;
       color: #1a1a2e;
-      transition: 0.2s ease;
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.08rem;
+      font-weight: bold;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .button:hover {
-      background-color: #ffbb70;
+      background: #ffbb70;
       transform: translateY(-2px);
     }
 
-    .buy-section {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 25px 20px;
-      border-radius: 18px;
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .buy-title {
-      color: #f2a65a;
-      font-size: 1.35em;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .price {
-      font-size: 1.15em;
-      margin-bottom: 20px;
-    }
-
-    .buy-button {
-      display: inline-block;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 18px 25px;
-      border-radius: 35px;
-      background-color: #f2a65a;
-      color: #1a1a2e;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.15em;
-      transition: 0.2s ease;
-    }
-
-    .buy-button:hover {
-      background-color: #ffbb70;
-      transform: translateY(-2px);
+    .purchase-note {
+      margin: -3px 0 28px;
+      color: #bdbdbd;
+      font-size: 0.95rem;
     }
 
     .coming-soon {
       margin-top: 70px;
       padding-top: 35px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
     }
 
     .coming-soon h2 {
+      margin: 0 0 15px;
       color: #f2a65a;
-      font-size: 2em;
+      font-size: 2rem;
+      font-weight: normal;
     }
 
     .coming-soon p {
-      color: #d8d8d8;
-      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;
+      color: #d5d5d5;
+      line-height: 1.7;
     }
 
     footer {
       margin-top: 60px;
       padding-top: 25px;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
-      color: #aaa;
-      font-size: 0.9em;
+      color: #999;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 600px) {
-      body {
-        padding: 30px 15px;
+      .container {
+        padding: 40px 18px 30px;
       }
 
-      h1 {
-        font-size: 2.2em;
+      header h1 {
+        font-size: 2.3rem;
       }
 
-      .story-title {
-        font-size: 2em;
+      .book-title {
+        font-size: 2rem;
+      }
+
+      .description {
+        font-size: 1rem;
       }
     }
   </style>
@@ -167,13 +151,12 @@
 
 <body>
 
-  <div class="container">
+  <main class="container">
 
-    <h1>Stories</h1>
-
-    <div class="author">
-      by M. A. Harrington
-    </div>
+    <header>
+      <h1>Stories</h1>
+      <div class="site-author">by M. A. Harrington</div>
+    </header>
 
     <img
       src="cover.jpg"
@@ -181,11 +164,9 @@
       class="cover"
     >
 
-    <h2 class="story-title">
-      Perfect Fit
-    </h2>
+    <h2 class="book-title">Perfect Fit</h2>
 
-    <div class="story-author">
+    <div class="book-author">
       by M. A. Harrington
     </div>
 
@@ -196,9 +177,7 @@
       loss, and fighting for the world to see a child, not just a diagnosis.
     </p>
 
-    <div class="actions">
-
-      <!-- PREVIEW -->
+    <div class="buttons">
 
       <a
         href="preview.html"
@@ -207,30 +186,18 @@
         📖 Read a Preview
       </a>
 
+      <a
+        href="https://www.paypal.com/ncp/payment/XQ2W6YDDDTJH4"
+        class="button"
+      >
+        💛 Buy the Complete Book — $2.99
+      </a>
 
-      <!-- PURCHASE -->
-
-      <div class="buy-section">
-
-        <div class="buy-title">
-          💛 Buy the Complete Book
-        </div>
-
-        <div class="price">
-          $2.99 USD
-        </div>
-
-        <a
-          href="https://www.paypal.com/ncp/payment/XQ2W6YDDDTJH4"
-          class="buy-button"
-        >
-          💳 Buy Now — $2.99
-        </a>
-
+      <div class="purchase-note">
+        Secure payment through PayPal
       </div>
 
     </div>
-
 
     <section class="coming-soon">
 
@@ -243,12 +210,12 @@
 
     </section>
 
-
     <footer>
       © M. A. Harrington
     </footer>
 
-  </div>
+  </main>
 
 </body>
 </html>
+```
