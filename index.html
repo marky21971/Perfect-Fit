@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>M. A. Harrington — Stories</title>
+  <title>Perfect Fit — M. A. Harrington</title>
 
-  <!-- PayPal Part 1 -->
+  <!-- PAYPAL -->
   <script
     src="https://www.paypal.com/sdk/js?client-id=BAA87q5bQ3u3W_VdJyDEAGF3T-xe-154SXPwWnCRt73RuDEda5aDoizarbE_1BItoxEAXIvD3oyLXe9cUU&components=hosted-buttons&disable-funding=venmo&currency=USD">
   </script>
@@ -21,6 +21,11 @@
       text-align: center;
     }
 
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     h1 {
       font-size: 2.8em;
       margin: 0;
@@ -29,56 +34,56 @@
     .author {
       color: #f2a65a;
       font-size: 1.3em;
-      margin: 8px 0 45px;
-    }
-
-    .story {
-      max-width: 900px;
-      margin: 0 auto 70px;
+      margin: 8px 0 40px;
     }
 
     .cover {
       width: 280px;
       max-width: 90%;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       margin-bottom: 25px;
     }
 
     .story-title {
-      font-size: 2.3em;
-      margin: 0 0 5px;
+      font-size: 2.4em;
+      margin: 5px 0;
     }
 
     .story-author {
       color: #f2a65a;
       font-size: 1.1em;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .description {
-      max-width: 650px;
-      margin: 0 auto 30px;
+      max-width: 680px;
+      margin: 0 auto 35px;
       line-height: 1.7;
       font-size: 1.08em;
     }
 
-    .button-row {
+    .actions {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
-    .button {
-      display: inline-block;
-      padding: 15px 30px;
-      border-radius: 30px;
+    .action-button {
+      display: block;
+      padding: 18px 25px;
+      border-radius: 35px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.05em;
+      font-size: 1.15em;
       transition: 0.2s ease;
+      border: none;
+    }
+
+    .action-button:hover {
+      transform: translateY(-2px);
     }
 
     .preview-button,
@@ -92,16 +97,35 @@
       background-color: #ffbb70;
     }
 
+    .buy-section {
+      margin-top: 5px;
+      padding: 25px 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 18px;
+    }
+
+    .buy-title {
+      font-size: 1.3em;
+      color: #f2a65a;
+      margin-bottom: 5px;
+    }
+
+    .buy-price {
+      font-size: 1.1em;
+      margin-bottom: 18px;
+    }
+
     .paypal-box {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 48px;
+      min-height: 55px;
     }
 
     .coming-soon {
-      max-width: 900px;
-      margin: 60px auto 0;
+      margin-top: 70px;
+      padding-top: 35px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .coming-soon h2 {
@@ -114,36 +138,46 @@
       line-height: 1.6;
     }
 
-    .future-story {
-      min-height: 70px;
-      margin: 16px 0;
-      border: 1px solid rgba(242, 166, 90, 0.12);
-      border-radius: 14px;
-      background-color: rgba(255, 255, 255, 0.02);
-    }
-
     footer {
-      margin-top: 70px;
+      margin-top: 60px;
       padding-top: 25px;
       border-top: 1px solid rgba(255, 255, 255, 0.12);
       color: #aaa;
       font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      .story-title {
+        font-size: 2em;
+      }
+
+      .action-button {
+        font-size: 1.05em;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Stories</h1>
+  <div class="container">
 
-  <div class="author">
-    by M. A. Harrington
-  </div>
+    <h1>Stories</h1>
+
+    <div class="author">
+      by M. A. Harrington
+    </div>
 
 
-  <!-- PERFECT FIT -->
-
-  <section class="story">
+    <!-- PERFECT FIT -->
 
     <img
       src="cover.jpg"
@@ -166,65 +200,82 @@
       loss, and fighting for the world to see a child, not just a diagnosis.
     </p>
 
-    <div class="button-row">
+
+    <!-- THREE MAIN ACTIONS -->
+
+    <div class="actions">
+
+      <!-- PREVIEW -->
 
       <a
         href="preview.html"
-        class="button preview-button"
+        class="action-button preview-button"
       >
         📖 Read a Preview
       </a>
 
+
+      <!-- TRANSLATION -->
+
       <a
         href="translate.html"
-        class="button translate-button"
+        class="action-button translate-button"
       >
         🌍 Translate My Book
       </a>
 
-      <!-- PAYPAL BUY BUTTON -->
 
-      <div class="paypal-box">
+      <!-- BUY -->
 
-        <div id="paypal-container-5CE23LZUYDP2W"></div>
+      <div class="buy-section">
 
-        <script>
-          paypal.HostedButtons({
-            hostedButtonId: "5CE23LZUYDP2W"
-          }).render("#paypal-container-5CE23LZUYDP2W");
-        </script>
+        <div class="buy-title">
+          💛 Buy the Complete Book
+        </div>
+
+        <div class="buy-price">
+          $2.99 USD
+        </div>
+
+        <div class="paypal-box">
+
+          <div id="paypal-container-5CE23LZUYDP2W"></div>
+
+        </div>
 
       </div>
 
     </div>
 
-  </section>
+
+    <!-- PAYPAL BUTTON -->
+
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "5CE23LZUYDP2W",
+      }).render("#paypal-container-5CE23LZUYDP2W");
+    </script>
 
 
-  <!-- FUTURE STORIES -->
+    <!-- FUTURE STORIES -->
 
-  <section class="coming-soon">
+    <section class="coming-soon">
 
-    <h2>More Stories Coming Soon</h2>
+      <h2>More Stories Coming Soon</h2>
 
-    <p>
-      A growing collection of stories, books, adventures, and movies
-      by M. A. Harrington.
-    </p>
+      <p>
+        A growing collection of stories, books, adventures, and movies
+        by M. A. Harrington.
+      </p>
 
-    <div class="future-story"></div>
-    <div class="future-story"></div>
-    <div class="future-story"></div>
-    <div class="future-story"></div>
-    <div class="future-story"></div>
-    <div class="future-story"></div>
-
-  </section>
+    </section>
 
 
-  <footer>
-    © M. A. Harrington
-  </footer>
+    <footer>
+      © M. A. Harrington
+    </footer>
+
+  </div>
 
 </body>
 </html>
