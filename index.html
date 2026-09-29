@@ -63,6 +63,7 @@
       gap: 14px;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
     }
 
     .button {
@@ -76,16 +77,20 @@
     }
 
     .preview-button,
-    .translate-button,
-    .buy-button {
+    .translate-button {
       background-color: #f2a65a;
       color: #1a1a2e;
     }
 
     .preview-button:hover,
-    .translate-button:hover,
-    .buy-button:hover {
+    .translate-button:hover {
       background-color: #ffbb70;
+    }
+
+    .paypal-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .coming-soon {
@@ -171,14 +176,15 @@
         🌍 Translate My Book
       </a>
 
-      <a
-        href="https://www.paypal.me/bautistaroselyn271"
-        target="_blank"
-        rel="noopener"
-        class="button buy-button"
-      >
-        💛 Buy the Complete Book — $2.99
-      </a>
+      <!-- PAYPAL BUY BUTTON -->
+
+      <div class="paypal-box">
+
+        <script 
+  src="https://www.paypal.com/sdk/js?client-id=BAA87q5bQ3u3W_VdJyDEAGF3T-xe-154SXPwWnCRt73RuDEda5aDoizarbE_1BItoxEAXIvD3oyLXe9cUU&components=hosted-buttons&disable-funding=venmo&currency=USD">
+</script>
+
+      </div>
 
     </div>
 
