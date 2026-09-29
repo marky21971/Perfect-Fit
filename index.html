@@ -6,6 +6,11 @@
 
   <title>M. A. Harrington — Stories</title>
 
+  <!-- PayPal Part 1 -->
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=BAA87q5bQ3u3W_VdJyDEAGF3T-xe-154SXPwWnCRt73RuDEda5aDoizarbE_1BItoxEAXIvD3oyLXe9cUU&components=hosted-buttons&disable-funding=venmo&currency=USD">
+  </script>
+
   <style>
     body {
       font-family: Georgia, serif;
@@ -91,6 +96,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 48px;
     }
 
     .coming-soon {
@@ -180,15 +186,14 @@
 
       <div class="paypal-box">
 
-        <script 
-  src="https://www.paypal.com/sdk/js?client-id=BAA87q5bQ3u3W_VdJyDEAGF3T-xe-154SXPwWnCRt73RuDEda5aDoizarbE_1BItoxEAXIvD3oyLXe9cUU&components=hosted-buttons&disable-funding=venmo&currency=USD">
-</script>
-<div id="paypal-container-5CE23LZUYDP2W"></div>
-<script>
-  paypal.HostedButtons({
-    hostedButtonId: "5CE23LZUYDP2W",
-  }).render("#paypal-container-5CE23LZUYDP2W")
-</script>
+        <div id="paypal-container-5CE23LZUYDP2W"></div>
+
+        <script>
+          paypal.HostedButtons({
+            hostedButtonId: "5CE23LZUYDP2W"
+          }).render("#paypal-container-5CE23LZUYDP2W");
+        </script>
+
       </div>
 
     </div>
