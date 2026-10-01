@@ -1,272 +1,225 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Perfect Fit — M. A. Harrington</title>
+  <title>Perfect Fit by M. A. Harrington</title>
+
+  <meta name="description" content="Read and download Perfect Fit by M. A. Harrington for free.">
 
   <style>
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
       background: #1a1a2e;
-      color: #f5f5f5;
+      color: #f8f1e5;
       text-align: center;
+      line-height: 1.6;
     }
 
     .container {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 55px 20px 40px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: normal;
-      letter-spacing: 1px;
-    }
-
-    .site-author {
-      margin: 10px 0 45px;
-      color: #f2a65a;
-      font-size: 1.25rem;
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 20px 60px;
     }
 
     .cover {
-      display: block;
       width: 280px;
       max-width: 90%;
-      height: auto;
-      margin: 0 auto 30px;
       border-radius: 10px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
 
-    .book-title {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: normal;
-    }
-
-    .book-author {
-      margin: 8px 0 28px;
+    h1 {
       color: #f2a65a;
-      font-size: 1.15rem;
+      font-size: 3rem;
+      margin: 10px 0 5px;
     }
 
-    .description {
-      max-width: 680px;
-      margin: 0 auto 38px;
-      font-size: 1.08rem;
-      line-height: 1.8;
-      color: #e5e5e5;
+    h2 {
+      color: #f2a65a;
+      margin-top: 40px;
     }
 
-    .buttons {
-      max-width: 480px;
-      margin: 0 auto;
+    .author {
+      font-size: 1.25rem;
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: auto;
+      font-size: 1.1rem;
     }
 
     .button {
-      display: block;
-      width: 100%;
-      padding: 16px 24px;
-      margin: 0 0 16px;
-      border: 0;
-      border-radius: 10px;
-      background: #f2a65a;
-      color: #1a1a2e;
+      display: inline-block;
+      margin: 10px 6px;
+      padding: 14px 25px;
+      border-radius: 8px;
       text-decoration: none;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.08rem;
       font-weight: bold;
-      transition: background 0.2s ease, transform 0.2s ease;
+      font-size: 1rem;
+      transition: 0.2s;
     }
 
     .button:hover {
-      background: #ffbb70;
       transform: translateY(-2px);
+      opacity: 0.9;
     }
 
-    .purchase-note {
-      margin: -3px 0 28px;
-      color: #bdbdbd;
-      font-size: 0.95rem;
+    .download {
+      background: #f2a65a;
+      color: #1a1a2e;
     }
 
-    .preview {
-      margin-top: 60px;
-      padding-top: 35px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    .translate {
+      background: #ffffff;
+      color: #1a1a2e;
     }
 
-    .preview h2,
-    .coming-soon h2 {
-      margin: 0 0 20px;
-      color: #f2a65a;
-      font-size: 2rem;
-      font-weight: normal;
+    .support {
+      background: #f2a65a;
+      color: #1a1a2e;
     }
 
-    .pdf-frame {
-      display: block;
-      width: 100%;
-      height: 75vh;
-      min-height: 500px;
-      border: 0;
-      border-radius: 8px;
-      background: #fff;
-    }
-
-    .preview-fallback {
-      margin: 15px 0 25px;
-      color: #d5d5d5;
-      line-height: 1.7;
-    }
-
-    .preview-fallback a {
-      color: #f2a65a;
-    }
-
-    .home-button {
-      max-width: 260px;
-      margin: 20px auto 0;
-    }
-
-    .coming-soon {
-      margin-top: 70px;
-      padding-top: 35px;
-      border-top: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .coming-soon p {
-      max-width: 650px;
-      margin: 0 auto;
-      color: #d5d5d5;
-      line-height: 1.7;
+    .section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.2);
     }
 
     footer {
-      margin-top: 60px;
-      padding-top: 25px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      color: #999;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
       font-size: 0.9rem;
+      opacity: 0.7;
     }
 
     @media (max-width: 600px) {
-      .container {
-        padding: 40px 18px 30px;
-      }
-
-      header h1 {
+      h1 {
         font-size: 2.3rem;
       }
 
-      .book-title {
-        font-size: 2rem;
-      }
-
-      .description {
-        font-size: 1rem;
-      }
-
-      .pdf-frame {
-        height: 70vh;
-        min-height: 400px;
+      .button {
+        display: block;
+        max-width: 320px;
+        margin: 12px auto;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="container" id="home">
 
-    <header>
-      <h1>Stories</h1>
-      <div class="site-author">by M. A. Harrington</div>
-    </header>
+  <main class="container">
 
     <img
       src="cover.jpg"
-      alt="Perfect Fit book cover"
+      alt="Perfect Fit by M. A. Harrington"
       class="cover"
     >
 
-    <h2 class="book-title">Perfect Fit</h2>
-    <div class="book-author">by M. A. Harrington</div>
+    <h1>Perfect Fit</h1>
 
-    <p class="description">
-      Cynthia, a therapist, meets Sam, a park ranger, at a speed dating event.
-      They build a life together and welcome a daughter, Lucy — but when Lucy
-      is diagnosed with CDKL5, everything changes. This is a story about love,
-      loss, and fighting for the world to see a child, not just a diagnosis.
-    </p>
+    <div class="author">
+      by M. A. Harrington
+    </div>
 
-    <div class="buttons">
-      <a href="#preview" class="button">
-        📖 Read the 5-Chapter Preview
-      </a>
+    <div class="intro">
+
+      <p>
+        Welcome to <strong>Perfect Fit</strong>.
+      </p>
+
+      <p>
+        Enjoy the story completely free.
+      </p>
 
       <a
-        href="https://www.paypal.com/ncp/payment/XQ2W6YDDDTJH4"
-        class="button"
+        href="perfect-fit.pdf"
+        class="button download"
         target="_blank"
         rel="noopener"
       >
-        💛 Buy the Complete Book — $2.99
+        📖 Read / Download Perfect Fit — Free
       </a>
 
-      <div class="purchase-note">
-        Secure payment through PayPal
-      </div>
     </div>
 
-    <section class="preview" id="preview">
-      <h2>5-Chapter Preview</h2>
 
-      <iframe
-        class="pdf-frame"
-        src="Perfect%20Fit_5-chapter_preview.pdf"
-        title="Perfect Fit five-chapter PDF preview"
-      >
-        Your browser does not support embedded PDFs.
-        <a href="Perfect%20Fit_5-chapter_preview.pdf">Open the PDF preview</a>.
-      </iframe>
+    <section class="section">
 
-      <p class="preview-fallback">
-        If the preview doesn't appear,
-        <a href="Perfect%20Fit_5-chapter_preview.pdf" target="_blank" rel="noopener">
-          open the PDF in a new tab
-        </a>.
-      </p>
+      <h2>🌍 Read in Another Language</h2>
 
-      <a href="#home" class="button home-button">↑ Back to Home</a>
-    </section>
-
-    <section class="coming-soon">
-      <h2>More Stories Coming Soon</h2>
       <p>
-        A growing collection of books, stories, adventures, and movies
-        by M. A. Harrington.
+        Want to read Perfect Fit in another language?
+        Choose the translation service you prefer.
       </p>
+
+      <a
+        href="https://translate.google.com/"
+        class="button translate"
+        target="_blank"
+        rel="noopener"
+      >
+        Google Translate
+      </a>
+
+      <a
+        href="https://www.deepl.com/translator"
+        class="button translate"
+        target="_blank"
+        rel="noopener"
+      >
+        DeepL Translator
+      </a>
+
     </section>
+
+
+    <section class="section">
+
+      <h2>❤️ Support My Writing</h2>
+
+      <p>
+        If you enjoy Perfect Fit and would like to help me create
+        more stories, you can support my writing with any amount
+        you choose.
+      </p>
+
+      <a
+        href="https://paypal.me/bautistaroselyn271"
+        class="button support"
+        target="_blank"
+        rel="noopener"
+      >
+        ❤️ Support My Writing
+      </a>
+
+      <p>
+        Your support helps me keep writing and create more stories
+        for readers to enjoy.
+      </p>
+
+    </section>
+
 
     <footer>
-      © M. A. Harrington
+      © 2026 M. A. Harrington · Perfect Fit
     </footer>
 
   </main>
+
 </body>
 </html>
+```
