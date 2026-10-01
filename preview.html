@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Read a preview of [Book Title] by [Author Name].">
+  <title>Book Preview | [Book Title]</title>
+
+  <style>
+    :root {
+      --ink: #29251f;
+      --muted: #716b63;
+      --paper: #fffdf8;
+      --accent: #7a4b32;
+      --border: #e8e1d6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f3efe8;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.75;
+    }
+
+    header, main, footer {
+      width: min(760px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header a, .back-link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    header a:hover, .back-link:hover { text-decoration: underline; }
+
+    main {
+      margin-bottom: 40px;
+      padding: clamp(24px, 6vw, 64px);
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 8px 28px rgb(0 0 0 / 5%);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font: 700 0.78rem/1.4 Arial, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 3.4rem);
+      line-height: 1.1;
+    }
+
+    .byline {
+      margin: 12px 0 32px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    hr {
+      margin: 32px 0;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .chapter {
+      margin-top: 32px;
+    }
+
+    .chapter p { margin: 0 0 1.25em; }
+
+    .cta {
+      margin-top: 40px;
+      padding: 24px;
+      background: #f7f1e8;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 20px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: white;
+      font: 700 0.95rem Arial, sans-serif;
+      text-decoration: none;
+    }
+
+    .button:hover { background: #5e3826; }
+
+    footer {
+      padding: 0 0 28px;
+      color: var(--muted);
+      font: 0.85rem Arial, sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!-- Change index.html if your main book page has a different filename. -->
+    <a href="index.html" class="back-link">← Back to the book page</a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Book Preview</p>
+    <h1>[Book Title]</h1>
+    <p class="byline">By [Author Name]</p>
+
+    <hr>
+
+    <section class="chapter" aria-labelledby="chapter-title">
+      <h2 id="chapter-title">Chapter One</h2>
+
+      <!-- Replace the sample paragraphs below with your preview text. -->
+      <p>
+        Add the opening paragraph of your book here. A preview lets readers
+        experience your writing and get a sense of the story.
+      </p>
+
+      <p>
+        Add the next paragraph here. You can include as much of your excerpt
+        as you’d like.
+      </p>
+
+      <p>
+        Continue adding paragraphs. Use a separate
+        <code>&lt;p&gt;</code> element for each paragraph.
+      </p>
+    </section>
+
+    <section class="cta" aria-label="Get the book">
+      <p>Enjoying the preview?</p>
+      <!-- Replace # with your purchase or book-information link. -->
+      <a class="button" href="#" target="_blank" rel="noopener">
+        Get the Book
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> [Author Name]. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
