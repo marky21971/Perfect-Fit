@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Story Library — M. A. Harrington</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #1a1a2e;
+      color: #f8f1e5;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 20px 60px;
+    }
+
+    h1 {
+      color: #f2a65a;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+    }
+
+    .story {
+      margin: 30px auto;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      max-width: 700px;
+    }
+
+    .story h2 {
+      color: #f2a65a;
+      margin-top: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 10px 6px;
+      padding: 14px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .preview {
+      background: #ffffff;
+      color: #1a1a2e;
+    }
+
+    .download {
+      background: #f2a65a;
+      color: #1a1a2e;
+    }
+
+    .back {
+      margin-top: 40px;
+      background: #ffffff;
+      color: #1a1a2e;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .button {
+        display: block;
+        max-width: 320px;
+        margin: 12px auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <h1>📚 My Story Library</h1>
+
+    <p class="intro">
+      Welcome to my story library. Here you can discover my stories,
+      read previews, and download the books that are available.
+    </p>
+
+    <div class="story">
+
+      <h2>Perfect Fit</h2>
+
+      <p>
+        A story about love, family, difference, and discovering that
+        everyone has a place where they belong.
+      </p>
+
+      <a
+        href="preview.html"
+        class="button preview"
+      >
+        📖 Preview
+      </a>
+
+      <a
+        href="perfect-fit.pdf"
+        class="button download"
+        target="_blank"
+        rel="noopener"
+      >
+        ⬇️ Read / Download
+      </a>
+
+    </div>
+
+    <a
+      href="index.html"
+      class="button back"
+    >
+      ← Back to Home
+    </a>
+
+    <footer>
+      Copyright © 2026 M. A. Harrington. All rights reserved.
+    </footer>
+
+  </main>
+
+</body>
+</html>
